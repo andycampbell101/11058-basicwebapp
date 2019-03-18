@@ -75,15 +75,9 @@ if (isset($_POST['submit'])) {
 
  	<label for="gameconsolename">Console name</label>
  	<select name="gameconsolename" id="gameconsolename">
- 		{% if #gameconsolebrand="Atari" %}
+ 		<option>Select a console</option>
  		<option value="Atari 2600">Atari 2600</option>
- 		{% end if %}
-
- 		{% if #gameconsolebrand="SEGA" %}
  		<option value="SEGA Genesis">SEGA Genesis</option>
- 		{% end if %}
-
- 		{% if #gameconsolebrand="Nintendo" %}
  		<option value="Nintendo Game Boy/Game Boy Colour">Nintendo Game Boy/Game Boy Colour</option>
  		<option value="Nintendo Game Boy Advance">Nintendo Game Boy Advance</option>
  		<option value="Nintendo Entertainment System (NES)/NES Classic">Nintendo Entertainment System (NES)/NES Classic</option>
@@ -94,26 +88,16 @@ if (isset($_POST['submit'])) {
  		<option value="Nintendo Wii">Nintendo Wii</option>
  		<option value="Nintendo Wii U">Nintendo Wii U</option>
  		<option value="Nintendo Switch">Nintendo Switch</option>
- 		{% end if %}
-
- 		{% if #gameconsolebrand="Microsoft" %}
  		<option value="Windows">Windows</option>
  		<option value="Xbox">Xbox</option>
  		<option value="Xbox 360">Xbox 360</option>
  		<option value="Xbox One">Xbox One</option>
- 		{% end if %}
-
- 		{% if #gameconsolebrand="Sony" %}
  		<option value="PlayStation">PlayStation</option>
  		<option value="PlayStation 2">PlayStation 2</option>
  		<option value="PlayStation 3">PlayStation 3</option>
  		<option value="PlayStation 4">PlayStation 4</option>
  		<option value="PlayStation Portable (PSP)">PlayStation Portable (PSP)</option>
- 		{% end if %}
-
- 		{% if #gameconsolebrand="Other" %}
  		<option value="Mobile">Mobile</option>
- 		{% end if %}
 
  	</select>
 
