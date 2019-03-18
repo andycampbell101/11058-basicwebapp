@@ -4,7 +4,7 @@
 
 <head>
 
-	<title>Wk 5 Tuesday</title>
+	<title>Games Catalogue</title>
 	
 	<meta cahrset="utf-8">
 

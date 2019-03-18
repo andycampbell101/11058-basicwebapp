@@ -11,28 +11,29 @@
 			// Connect to the database
 			$connection = new PDO($dsn, $username, $password, $options);
 
+			// Grab the elements from the forms and turn them into variables
 			$game =[
-				"id" => $_POST['id'],
-				"gamename" => $_POST['gamename'],
-				"gameconsolebrand" => $_POST['gameconsolebrand'],
-				"gameconsolename" => $_POST['gameconsolename'],
-				"gameyear" => $_POST['gameyear'],
+				"id" 				=> $_POST['id'],
+				"gamename" 			=> $_POST['gamename'],
+				"gameconsolebrand" 	=> $_POST['gameconsolebrand'],
+				"gameconsolename"	=> $_POST['gameconsolename'],
+				"gameyear"			=> $_POST['gameyear'],
 			];
 
 			// Create the SQl statement to be run
-			$sql = "UPDATE `games`
+			$sql = "UPDATE games
 				SET id = :id,
 					gamename = :gamename,
 					gameconsolebrand = :gameconsolebrand,
 					gameconsolename = :gameconsolename,
-					gameyear = :gameyear,
+					gameyear = :gameyear
 					WHERE id = :id";
 
 			// Prepare the SQL statement to be run
 			$statement = $connection->prepare($sql);
 
 			// Execute the SQL statement to be run into the database
-			$statement->$execute($game);
+			$statement->execute($game);
 
 		}
 
@@ -43,7 +44,7 @@
 	}
 
 	// Code to pull the data from the database to be changed
-	if (isest($_GET['id'])) {
+	if (isset($_GET['id'])) {
 		try {
 
 			// Connect to the database
@@ -59,13 +60,13 @@
 			$statement = $connection->prepare($sql);
 
 			// Bind the ID to the PDO ID
-			$statement->bind_value(':id', $id);
+			$statement->bindValue(':id', $id);
 
 			// Execute the SQL statement
-			$statement->$execute;
+			$statement->execute();
 
 			// Use the SQL statement to fill the contents of the form with info from the database
-			$game = $connection->$fetch(PDO::FETCH_ASSOC);
+			$game = $statement->fetch(PDO::FETCH_ASSOC);
 
 		}
 
@@ -86,28 +87,27 @@
 <?php include "templates/header.php"; ?>
 
 <?php if (isset($_POST['submit']) && $statement) : ?>
-	<p>Work successfully updated.</p>
+	<p>Game successfully updated.</p>
 <?php endif; ?>
 
-	<h2>Edit a work</h2>
+	<h2>Edit a game</h2>
 
 		<form method="post">
 		    
-		    <label for="id">ID</label>
-		    <input type="text" name="id" id="id" value="<?php echo escape($work['id']); ?>" >
-		    
-		    <label for="gamename">Artist Name</label>
-		    <input type="text" name="gamename" id="gamename" value="<?php echo $work['gamename']; ?>">
+		    <label for="gamename">Game name</label>
+		    <input type="text" name="gamename" id="gamename" value="<?php echo escape($game['gamename']); ?>">
 
-		    <label for="gameconsolebrand">Work Title</label>
-		    <input type="text" name="gameconsolebrand" id="gameconsolebrand" value="<?php echo $work['gameconsolebrand']; ?>">
+		    <label for="gameconsolebrand">Brand</label>
+		    <input type="text" name="gameconsolebrand" id="gameconsolebrand" value="<?php echo escape($game['gameconsolebrand']); ?>">
 
-		    <label for="gameconsolename">Work Date</label>
-		    <input type="text" name="gameconsolename" id="gameconsolename" value="<?php echo $work['gameconsolename']; ?>">
+		    <label for="gameconsolename">Console</label>
+		    <input type="text" name="gameconsolename" id="gameconsolename" value="<?php echo escape($game['gameconsolename']); ?>">
 
-		    <label for="gameyear">Work Type</label>
-		    <input type="text" name="gameyear" id="gameyear" value="<?php echo $work['gameyear']; ?>">
+		    <label for="gameyear">Year</label>
+		    <input type="text" name="gameyear" id="gameyear" value="<?php echo escape($game['gameyear']); ?>">
 
 		    <input type="submit" name="submit" value="Save">
 
 		</form>
+
+<?php include "templates/footer.php"; ?>

@@ -1,30 +1,35 @@
-<?php 
+<?php
 
-// this code will only execute after the submit button is clicked
+// Code to state command to run after submit button is pressed
+
 if (isset($_POST['submit'])) {
-	
-    // include the config file that we created before
-    require "../config.php"; 
-    
-    // this is called a try/catch statement 
-	try {
-        // FIRST: Connect to the database
+
+    // Include the file to understand connection to database
+    require "../config.php";
+
+    // Try/Catch Statement for running command
+    try {
+
+        // Connect to the database
         $connection = new PDO($dsn, $username, $password, $options);
-		
-        // SECOND: Create the SQL 
+
+        // Create the SQL statement to show the results from the database
         $sql = "SELECT * FROM games";
-        
-        // THIRD: Prepare the SQL
+
+        // Now we run the SQL statement to add the information to the database
         $statement = $connection->prepare($sql);
         $statement->execute();
-        
-        // FOURTH: Put it into a $result object that we can access in the page
+
+        // Put it into a new code so we can access the information and project it to the webpage
         $result = $statement->fetchAll();
 
-	} catch(PDOException $error) {
-        // if there is an error, tell us what it is
-		echo $sql . "<br>" . $error->getMessage();
-	}	
+    }
+
+    // Add a statement if the code tried to run and was unsuccessful, spit out the error onto the screen
+    catch(PDOException $error) {
+        echo $sql . "<br>" . $error->getMessage();
+    }
+
 }
 ?>
 
@@ -42,12 +47,10 @@ if (isset($_POST['submit'])) {
             ?>
 
 <p>
-    ID:
-    <?php echo $row["id"]; ?><br> Game Name:
-    <?php echo $row['gamename']; ?><br> Game Brand:
-    <?php echo $row['gameconsolebrand']; ?><br> Console:
-    <?php echo $row['gameconsolename']; ?><br> Year:
-    <?php echo $row['gameyear']; ?><br>
+    
+    <?php echo $row['gamename']; ?>, <?php echo $row['gameyear']; ?><br> 
+    <?php echo $row['gameconsolebrand']; ?><br>
+    <?php echo $row['gameconsolename']; ?><br>
 </p>
 <?php 
                             // this willoutput all the data from the array
