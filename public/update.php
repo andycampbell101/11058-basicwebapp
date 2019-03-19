@@ -39,7 +39,7 @@
 
 <p>
     
-    <?php echo $row['gamename']; ?>, <?php echo $row['gameyear']; ?><br> 
+    <?php echo $row['gamename']; ?>, <?php echo $row['gameyear']; ?><br>
     <?php echo $row['gameconsolebrand']; ?><br>
     <?php echo $row['gameconsolename']; ?><br>
      <a href="update-game.php?id=<?php echo $row['id']; ?>">Edit</a>
@@ -51,7 +51,6 @@
 
 <hr>
 <?php }; //close the foreach
-        
 ?>
 
 <?php include "templates/footer.php"?>

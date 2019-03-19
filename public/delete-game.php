@@ -61,4 +61,8 @@
 
 <?php include "templates/header.php"?>
 
+
+
+<?php if ($success) echo $success; ?>
+
 <?php include "templates/footer.php"?>

@@ -65,44 +65,44 @@ if (isset($_POST['submit'])) {
  	<label for="gameconsolebrand">Brand of console</label>
  	<select name="gameconsolebrand" id="gameconsolebrand">
  		<option>Select a brand</option>
- 		<option value="Atari">Atari</option>
- 		<option value="SEGA">SEGA</option>
- 		<option value="Nintendo">Nintendo</option>
- 		<option value="Microsoft">Microsoft</option>
- 		<option value="Sony">Sony</option>
- 		<option value="Other">Other</option>
+ 		<option id="Atari" value="Atari">Atari</option>
+ 		<option id="SEGA" value="SEGA">SEGA</option>
+ 		<option id="Nintendo" value="Nintendo">Nintendo</option>
+ 		<option id="Microsoft" value="Microsoft">Microsoft</option>
+ 		<option id="Sony" value="Sony">Sony</option>
+ 		<option id="Other" value="Other">Other</option>
  	</select>
 
- 	<label for="gameconsolename">Console name</label>
- 	<select name="gameconsolename" id="gameconsolename">
+ 	<label for="gameconsolename" class="gameconsolename">Console name</label>
+ 	<select name="gameconsolename" class="gameconsolename">
  		<option>Select a console</option>
- 		<option value="Atari 2600">Atari 2600</option>
- 		<option value="SEGA Genesis">SEGA Genesis</option>
- 		<option value="Nintendo Game Boy/Game Boy Colour">Nintendo Game Boy/Game Boy Colour</option>
- 		<option value="Nintendo Game Boy Advance">Nintendo Game Boy Advance</option>
- 		<option value="Nintendo Entertainment System (NES)/NES Classic">Nintendo Entertainment System (NES)/NES Classic</option>
- 		<option value="Super Nintendo Entertainment System (SNES)/SNES Classic">Super Nintendo Entertainment System (SNES)/SNES Classic</option>
- 		<option value="Nintendo GameCube">Nintendo GameCube</option>
- 		<option value="Nintendo DS">Nintendo DS</option>
- 		<optoin value="Nintendo 3DS">Nintendo 3DS</optoin>
- 		<option value="Nintendo Wii">Nintendo Wii</option>
- 		<option value="Nintendo Wii U">Nintendo Wii U</option>
- 		<option value="Nintendo Switch">Nintendo Switch</option>
- 		<option value="Windows">Windows</option>
- 		<option value="Xbox">Xbox</option>
- 		<option value="Xbox 360">Xbox 360</option>
- 		<option value="Xbox One">Xbox One</option>
- 		<option value="PlayStation">PlayStation</option>
- 		<option value="PlayStation 2">PlayStation 2</option>
- 		<option value="PlayStation 3">PlayStation 3</option>
- 		<option value="PlayStation 4">PlayStation 4</option>
- 		<option value="PlayStation Portable (PSP)">PlayStation Portable (PSP)</option>
- 		<option value="Mobile">Mobile</option>
+ 		<option class="Atari" value="Atari 2600">Atari 2600</option>
+ 		<option class="SEGA"value="SEGA Genesis">SEGA Genesis</option>
+ 		<option class="Nintendo" value="Nintendo Game Boy/Game Boy Colour">Nintendo Game Boy/Game Boy Colour</option>
+ 		<option class="Nintendo" value="Nintendo Game Boy Advance">Nintendo Game Boy Advance</option>
+ 		<option class="Nintendo" value="Nintendo Entertainment System (NES)/NES Classic">Nintendo Entertainment System (NES)/NES Classic</option>
+ 		<option class="Nintendo" value="Super Nintendo Entertainment System (SNES)/SNES Classic">Super Nintendo Entertainment System (SNES)/SNES Classic</option>
+ 		<option class="Nintendo" value="Nintendo GameCube">Nintendo GameCube</option>
+ 		<option class="Nintendo" value="Nintendo DS">Nintendo DS</option>
+ 		<optoin class="Nintendo" value="Nintendo 3DS">Nintendo 3DS</optoin>
+ 		<option class="Nintendo" value="Nintendo Wii">Nintendo Wii</option>
+ 		<option class="Nintendo" value="Nintendo Wii U">Nintendo Wii U</option>
+ 		<option class="Nintendo" value="Nintendo Switch">Nintendo Switch</option>
+ 		<option class="Microsoft" value="Windows">Windows</option>
+ 		<option class="Microsoft" value="Xbox">Xbox</option>
+ 		<option class="Microsoft" value="Xbox 360">Xbox 360</option>
+ 		<option class="Microsoft" value="Xbox One">Xbox One</option>
+ 		<option class="Sony" value="PlayStation">PlayStation</option>
+ 		<option class="Sony" value="PlayStation 2">PlayStation 2</option>
+ 		<option class="Sony" value="PlayStation 3">PlayStation 3</option>
+ 		<option class="Sony" value="PlayStation 4">PlayStation 4</option>
+ 		<option class="Sony" value="PlayStation Portable (PSP)">PlayStation Portable (PSP)</option>
+ 		<option class="Other" value="Mobile">Mobile</option>
 
  	</select>
 
- 	<label for="gameyear">Year of release</label>
- 	<select name="gameyear" id="gameyear">
+ 	<label for="gameyear" class="gameyear">Year of release</label>
+ 	<select name="gameyear" class="gameyear">
  		<option>Select a year</option>
  		<option value="2019">2019</option>
  		<option value="2018">2018</option>
@@ -159,5 +159,100 @@ if (isset($_POST['submit'])) {
  	<input type="submit" name="submit" value="Submit">
 
  </form>
+
+ <script>
+
+ 	$(document).ready(function(){
+
+ 		$(".gameconsolename").hide();
+ 		$(".gameyear").hide();
+ 		$(".Atari").hide();
+ 		$(".SEGA").hide();
+ 		$(".Nintendo").hide();
+ 		$(".Microsoft").hide();
+ 		$(".Sony").hide();
+ 		$(".Other").hide();
+
+ 		$("#gameconsolebrand").change(function(){
+ 			if($(this).val() == 'Atari') {
+ 				$(".gameconsolename").fadeIn();
+ 				$(".gameyear").fadeIn();
+ 				$(".Atari").fadeIn();
+		 		$(".SEGA").hide();
+		 		$(".Nintendo").hide();
+		 		$(".Microsoft").hide();
+		 		$(".Sony").hide();
+		 		$(".Other").hide();
+ 			}
+ 		});
+
+ 		$("#gameconsolebrand").change(function(){
+ 			if($(this).val() == 'SEGA') {
+ 				$(".gameconsolename").fadeIn();
+ 				$(".gameyear").fadeIn();
+ 				$(".SEGA").fadeIn();
+		 		$(".Atari").hide();
+		 		$(".Nintendo").hide();
+		 		$(".Microsoft").hide();
+		 		$(".Sony").hide();
+		 		$(".Other").hide();
+ 			}
+ 		});	
+
+ 		$("#gameconsolebrand").change(function(){
+ 			if($(this).val() == 'Nintendo') {
+ 				$(".gameconsolename").fadeIn();
+ 				$(".gameyear").fadeIn();
+ 				$(".Nintendo").fadeIn();
+		 		$(".Atari").hide();
+		 		$(".SEGA").hide();
+		 		$(".Microsoft").hide();
+		 		$(".Sony").hide();
+		 		$(".Other").hide();
+ 			}
+ 		});	
+
+ 		$("#gameconsolebrand").change(function(){
+ 			if($(this).val() == 'Microsoft') {
+ 				$(".gameconsolename").fadeIn();
+ 				$(".gameyear").fadeIn();
+ 				$(".Microsoft").fadeIn();
+		 		$(".Atari").hide();
+		 		$(".SEGA").hide();
+		 		$(".Nintendo").hide();
+		 		$(".Sony").hide();
+		 		$(".Other").hide();
+ 			}
+ 		});	
+
+ 		$("#gameconsolebrand").change(function(){
+ 			if($(this).val() == 'Sony') {
+ 				$(".gameconsolename").fadeIn();
+ 				$(".gameyear").fadeIn();
+ 				$(".Sony").fadeIn();
+		 		$(".Atari").hide();
+		 		$(".SEGA").hide();
+		 		$(".Nintendo").hide();
+		 		$(".Microsoft").hide();
+		 		$(".Other").hide();
+ 			}
+ 		});	
+
+ 		$("#gameconsolebrand").change(function(){
+ 			if($(this).val() == 'Other') {
+ 				$(".gameconsolename").fadeIn();
+ 				$(".gameyear").fadeIn();
+ 				$(".Other").fadeIn();
+		 		$(".Atari").hide();
+		 		$(".SEGA").hide();
+		 		$(".Nintendo").hide();
+		 		$(".Microsoft").hide();
+		 		$(".Sony").hide();
+ 			}
+ 		});	
+
+ 	});
+
+ </script>
 
  <?php include "templates/footer.php"?>
