@@ -39,10 +39,9 @@
 
 <p>
     
-    <?php echo $row['gamename']; ?>, <?php echo $row['gameyear']; ?><br>
-    <?php echo $row['gameconsolebrand']; ?><br>
-    <?php echo $row['gameconsolename']; ?><br>
-     <a href="update-game.php?id=<?php echo $row['id']; ?>">Edit</a>
+    <a href="update-game.php?id=<?php echo $row['id']; ?>">
+    <?php echo $row['gamename']; ?>, <?php echo $row['gameyear']; ?>, <?php echo $row['gameconsolebrand']; ?> <?php echo $row['gameconsolename']; ?><br>
+     </a>
 </p>
 <?php 
                             // this willoutput all the data from the array

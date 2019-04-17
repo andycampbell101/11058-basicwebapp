@@ -49,8 +49,7 @@ if (isset($_POST['submit'])) {
 <p>
     
     <?php echo $row['gamename']; ?>, <?php echo $row['gameyear']; ?><br> 
-    <?php echo $row['gameconsolebrand']; ?><br>
-    <?php echo $row['gameconsolename']; ?><br>
+    <?php echo $row['gameconsolebrand']; ?> <?php echo $row['gameconsolename']; ?><br>
 </p>
 <?php 
                             // this willoutput all the data from the array

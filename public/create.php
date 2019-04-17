@@ -76,18 +76,18 @@ if (isset($_POST['submit'])) {
  	<label for="gameconsolename" class="gameconsolename">Console name</label>
  	<select name="gameconsolename" class="gameconsolename">
  		<option>Select a console</option>
- 		<option class="Atari" value="Atari 2600">Atari 2600</option>
- 		<option class="SEGA"value="SEGA Genesis">SEGA Genesis</option>
- 		<option class="Nintendo" value="Nintendo Game Boy/Game Boy Colour">Nintendo Game Boy/Game Boy Colour</option>
- 		<option class="Nintendo" value="Nintendo Game Boy Advance">Nintendo Game Boy Advance</option>
- 		<option class="Nintendo" value="Nintendo Entertainment System (NES)/NES Classic">Nintendo Entertainment System (NES)/NES Classic</option>
- 		<option class="Nintendo" value="Super Nintendo Entertainment System (SNES)/SNES Classic">Super Nintendo Entertainment System (SNES)/SNES Classic</option>
- 		<option class="Nintendo" value="Nintendo GameCube">Nintendo GameCube</option>
- 		<option class="Nintendo" value="Nintendo DS">Nintendo DS</option>
- 		<optoin class="Nintendo" value="Nintendo 3DS">Nintendo 3DS</optoin>
- 		<option class="Nintendo" value="Nintendo Wii">Nintendo Wii</option>
- 		<option class="Nintendo" value="Nintendo Wii U">Nintendo Wii U</option>
- 		<option class="Nintendo" value="Nintendo Switch">Nintendo Switch</option>
+ 		<option class="Atari" value="2600">2600</option>
+ 		<option class="SEGA"value="Genesis">Genesis</option>
+ 		<option class="Nintendo" value="Game Boy/Game Boy Colour">Game Boy/Game Boy Colour</option>
+ 		<option class="Nintendo" value="Game Boy Advance">Game Boy Advance</option>
+ 		<option class="Nintendo" value="NES/NES Classic">NES/NES Classic</option>
+ 		<option class="Nintendo" value="SNES/SNES Classic">SNES/SNES Classic</option>
+ 		<option class="Nintendo" value="GameCube">Nintendo GameCube</option>
+ 		<option class="Nintendo" value="DS">DS</option>
+ 		<optoin class="Nintendo" value="3DS">3DS</optoin>
+ 		<option class="Nintendo" value="Wii">Wii</option>
+ 		<option class="Nintendo" value="Wii U">Wii U</option>
+ 		<option class="Nintendo" value="Switch">Switch</option>
  		<option class="Microsoft" value="Windows">Windows</option>
  		<option class="Microsoft" value="Xbox">Xbox</option>
  		<option class="Microsoft" value="Xbox 360">Xbox 360</option>
